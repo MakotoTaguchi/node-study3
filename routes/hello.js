@@ -40,6 +40,6 @@ router.post('/add', (req, res, next) => {
         db.run('insert into mydata (name, mail, age) values (?, ?, ?)', nm, ml, ag);
     });
     res.redirect('/hello');
-})
+});
 
 module.exports = router;
