@@ -43,8 +43,8 @@ router.get('/add', (req, res, next) => {
 });
 
 router.post('/add', [
-    check('name', 'NAME は必ず入力してください。').notEmpty(),
-    check('mail', 'MAIL はメールアドレスを記入してください。').isEmail(),
+    check('name', 'NAME は必ず入力してください。').notEmpty().escape(),
+    check('mail', 'MAIL はメールアドレスを記入してください。').isEmail().escape(),
     check('age', 'AGEは 年齢(整数)を入力ください。').isInt()
 ], (req, res, next) => {
     const errors = validationResult(req);
