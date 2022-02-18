@@ -16,7 +16,7 @@
         <h1 class="display-4"><%= title %></h1>
     </header>
     <div role="main">
-        <p><%-=content %></p>
+        <p><%= content %></p>
         <form action="/hello/edit" method="post">
             <input type="hidden" name="id" value="<%= mydata.id %>">
             <div class="form-group">
