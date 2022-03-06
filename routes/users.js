@@ -97,14 +97,9 @@ router.get('/delete', (req, res, next) => {
 });
 
 router.post('/delete', (req, res, next) => {
-  db.sequelize.sync()
-    .then(() => db.User.destroy({
-      where: {
-        id: req.body.id
-      }
-    }))
+  db.User.findByPk(req.body.id)
     .then(usr => {
-      res.redirect('/users');
+      usr.destroy().then(() => res.redirect('/users'));
     });
 });
 
