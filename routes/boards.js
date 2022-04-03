@@ -40,6 +40,7 @@ router.get('/:page', (req, res, next) => {
         var data = {
             title: 'Boards',
             login: req.session.login,
+            content: brds,
             page: pg
         }
         res.render('boards/index', data);
