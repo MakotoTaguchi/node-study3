@@ -58,6 +58,9 @@ router.post('/add', (req, res, next) => {
             .then(brd => {
                 res.redirect('/boards');
             })
+            .catch((err) => {
+                res.redirect('/boards');
+            })
         )
 });
 
